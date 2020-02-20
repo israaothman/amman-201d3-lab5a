@@ -12,8 +12,9 @@ and when you think it is finished, uncomment the call for the testSum() function
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  var sum= a+b;
-  return [sum ,'The sum of 4 and 7 is 11.'] ;
+  var summation= a+b;
+  //return summation;
+return [summation ,'The sum of 4 and 7 is 11.'] ;
 }
 
 
@@ -47,7 +48,12 @@ testMultiply(5,9);
 
 /////////////////////////////////////
 /* Problem 3
-Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array where the first element is the sum of those three numbers, the second element is the product of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
+Write a function called sumAndMultiply() that
+ takes in three numbers as separate arguments and returns 
+ an array where the first element is the sum of those three numbers,
+  the second element is the product of those three numbers,  
+  and the third and fourth elements are strings that EXACTLY follow this example
+   and use the values that were input into the function:
 
 Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
@@ -58,12 +64,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  
+  var thrdSum = sum(sum(a,b)[0],c)[0];
+  var thrdMul = multiply(multiply(a,b)[0],c)[0];
+  return [thrdSum , thrdMul , '4 and 7 and 5 sum to 16.' , 'The product of 4 and 7 and 5 is 140.' ];
 
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
-
+ testSumAndMultiply(4,7,5);
+ 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
